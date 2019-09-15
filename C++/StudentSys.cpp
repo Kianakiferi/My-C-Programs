@@ -1,15 +1,15 @@
 //Copyright:FANS Corporation
 //Auther: Kiana
 //Create Time: 2019-09/06 8:48PM
-//Description: ¼òµ¥µÄÑ§ÉúĞÅÏ¢ÏµÍ³
+//Description: ç®€å•çš„å­¦ç”Ÿä¿¡æ¯ç³»ç»Ÿ
 
-#include <iomanip> //setfill¹¦ÄÜ
+#include <iomanip> //setfillåŠŸèƒ½
 #include <iostream>
 #include <string>
 #define SIZE 10
 using namespace std;
 
-class Student_List //Ñ§ÉúÊı¾İÀà
+class Student_List //å­¦ç”Ÿæ•°æ®ç±»
 {
 public:
     friend class Func;
@@ -34,23 +34,23 @@ public:
 class Func
 {
 public:
-    int List_Num; //¼ÇÂ¼ÓĞ¼¸×éÊı¾İ
+    int List_Num; //è®°å½•æœ‰å‡ ç»„æ•°æ®
 
-    void Print_one_node(Student_List *p, int flag2) //Flag2Îª1 ¿ªÆôÏÔÊ¾Æ½¾ù·Ö
+    void Print_one_node(Student_List *p, int flag2) //Flag2ä¸º1 å¼€å¯æ˜¾ç¤ºå¹³å‡åˆ†
     {
         if (List_Num == 0)
         {
-            cout << "Ä¿Ç°ÓĞ0¸öÊı¾İ,ÇëÊäÈëºóÔÙÊÔ!" << endl;
+            cout << "ç›®å‰æœ‰0ä¸ªæ•°æ®,è¯·è¾“å…¥åå†è¯•!" << endl;
         }
-        cout << "Ñ§ºÅ£º" << setfill('0') << setw(5) << p->ID << endl;
-        cout << "ĞÕÃû£º" << p->Name << endl;
-        cout << "°à¼¶£º" << p->Class << endl;
-        cout << "³É¼¨1£º" << p->Grade1 << endl;
-        cout << "³É¼¨2£º" << p->Grade2 << endl;
-        cout << "³É¼¨3£º" << p->Grade3 << endl;
+        cout << "å­¦å·ï¼š" << setfill('0') << setw(5) << p->ID << endl;
+        cout << "å§“åï¼š" << p->Name << endl;
+        cout << "ç­çº§ï¼š" << p->Class << endl;
+        cout << "æˆç»©1ï¼š" << p->Grade1 << endl;
+        cout << "æˆç»©2ï¼š" << p->Grade2 << endl;
+        cout << "æˆç»©3ï¼š" << p->Grade3 << endl;
         if (flag2 == 1)
         {
-            cout << "Æ½¾ù·Ö£º" << Calcu_one_average(p) << endl;
+            cout << "å¹³å‡åˆ†ï¼š" << Calcu_one_average(p) << endl;
         }
         cout << endl;
     }
@@ -59,16 +59,16 @@ public:
     {
         if (List_Num == 0)
         {
-            cout << "Ä¿Ç°ÓĞ0¸öÊı¾İ,ÇëÊäÈëºóÔÙÊÔ!" << endl;
+            cout << "ç›®å‰æœ‰0ä¸ªæ•°æ®,è¯·è¾“å…¥åå†è¯•!" << endl;
         }
         else
         {
-            for (int i = 0; i < List_Num; i++) //´òÓ¡È«²¿Ñ§ÉúÊı¾İ
+            for (int i = 0; i < List_Num; i++) //æ‰“å°å…¨éƒ¨å­¦ç”Ÿæ•°æ®
             {
                 Print_one_node(p, 1);
                 p++;
             }
-            cout << "¹²" << List_Num << "×éÓĞĞ§Êı¾İ" << endl;
+            cout << "å…±" << List_Num << "ç»„æœ‰æ•ˆæ•°æ®" << endl;
         }
     }
 
@@ -80,24 +80,24 @@ public:
         return grade_aver;
     }
 
-    //float Calcu_all_average() ²»ÖªµÀÀÏÊ¦ÄúÒªµÄ ÄÄ¸öÆ½¾ù·Ö_(:3 <)_
+    //float Calcu_all_average() ä¸çŸ¥é“è€å¸ˆæ‚¨è¦çš„ å“ªä¸ªå¹³å‡åˆ†_(:3 <)_
 
     void Create_one_node(Student_List *p)
     {
-        cout << "ÇëÊäÈëÊı¾İ£º" << endl;
-        cout << "Ñ§ºÅ£º";
+        cout << "è¯·è¾“å…¥æ•°æ®ï¼š" << endl;
+        cout << "å­¦å·ï¼š";
         cin >> p->ID;
-        cout << "ĞÕÃû£º" << endl;
+        cout << "å§“åï¼š" << endl;
         cin >> p->Name;
-        cout << "°à¼¶£º" << endl;
+        cout << "ç­çº§ï¼š" << endl;
         cin >> p->Class;
-        cout << "³É¼¨1£º" << endl;
+        cout << "æˆç»©1ï¼š" << endl;
         cin >> p->Grade1;
-        cout << "³É¼¨2£º" << endl;
+        cout << "æˆç»©2ï¼š" << endl;
         cin >> p->Grade2;
-        cout << "³É¼¨3£º" << endl;
+        cout << "æˆç»©3ï¼š" << endl;
         cin >> p->Grade3;
-        cout << "´´½¨Íê³É" << endl;
+        cout << "åˆ›å»ºå®Œæˆ" << endl;
         List_Num++;
     }
 
@@ -106,62 +106,62 @@ public:
         Print_one_node(p, 0);
 
         int menuNum2 = 0;
-        while (menuNum2 != 7) //¿ÛÆß·µ»Ø
+        while (menuNum2 != 7) //æ‰£ä¸ƒè¿”å›
         {
             cout << endl;
-            cout << "ÊäÈëĞòºÅÒÔÑ¡Ôñ£º" << endl;
-            cout << "1. Ñ§ºÅ" << endl;
-            cout << "2. ĞÕÃû" << endl;
-            cout << "3. °à¼¶" << endl;
-            cout << "4. ³É¼¨1" << endl;
-            cout << "5. ³É¼¨2" << endl;
-            cout << "6. ³É¼¨3" << endl;
-            cout << "7. ·µ»ØÉÏÒ»¼¶" << endl;
+            cout << "è¾“å…¥åºå·ä»¥é€‰æ‹©ï¼š" << endl;
+            cout << "1. å­¦å·" << endl;
+            cout << "2. å§“å" << endl;
+            cout << "3. ç­çº§" << endl;
+            cout << "4. æˆç»©1" << endl;
+            cout << "5. æˆç»©2" << endl;
+            cout << "6. æˆç»©3" << endl;
+            cout << "7. è¿”å›ä¸Šä¸€çº§" << endl;
 
             cin >> menuNum2;
             switch (menuNum2)
             {
             case 1:
-                cout << "Ñ§ºÅ£º" << setfill('0') << setw(5) << p->ID << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "å­¦å·ï¼š" << setfill('0') << setw(5) << p->ID << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->ID;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             case 2:
-                cout << "ĞÕÃû£º" << p->Name << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "å§“åï¼š" << p->Name << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->Name;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             case 3:
-                cout << "°à¼¶£º" << p->Class << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "ç­çº§ï¼š" << p->Class << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->Class;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             case 4:
-                cout << "³É¼¨1£º" << p->Grade1 << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "æˆç»©1ï¼š" << p->Grade1 << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->Grade1;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             case 5:
-                cout << "³É¼¨2£º" << p->Grade2 << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "æˆç»©2ï¼š" << p->Grade2 << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->Grade2;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             case 6:
-                cout << "³É¼¨3£º" << p->Grade3 << endl;
-                cout << "ÇëÊäÈëĞŞ¸ÄµÄÊı¾İ£º";
+                cout << "æˆç»©3ï¼š" << p->Grade3 << endl;
+                cout << "è¯·è¾“å…¥ä¿®æ”¹çš„æ•°æ®ï¼š";
                 cin >> p->Grade3;
                 cout << endl
-                     << "ĞŞ¸ÄÍê±Ï" << endl;
+                     << "ä¿®æ”¹å®Œæ¯•" << endl;
                 break;
             default:
                 break;
@@ -169,22 +169,22 @@ public:
         }
     }
 
-    void Delete_one_node(Student_List *p, int flag1) //flag1Îª1 ¿ªÆôÏÔÊ¾È·ÈÏĞÅÏ¢
+    void Delete_one_node(Student_List *p, int flag1) //flag1ä¸º1 å¼€å¯æ˜¾ç¤ºç¡®è®¤ä¿¡æ¯
     {
         if (flag1 == 0)
         {
-            p->All_Set(0, " ", " ", 0, 0, 0); //²»ÈÃÓÃNULL...
+            p->All_Set(0, " ", " ", 0, 0, 0); //ä¸è®©ç”¨NULL...
         }
         else if (flag1 == 1)
         {
             char c1;
-            cout << "È·ÈÏÉ¾³ıÕâ¸öÊı¾İ£¿(Y/N): ";
+            cout << "ç¡®è®¤åˆ é™¤è¿™ä¸ªæ•°æ®ï¼Ÿ(Y/N): ";
             cin >> c1;
             while ((c1 == 'Y') || (c1 == 'y'))
             {
                 p->All_Set(0, " ", " ", 0, 0, 0);
                 List_Num--;
-                cout << "É¾³ı³É¹¦" << endl;
+                cout << "åˆ é™¤æˆåŠŸ" << endl;
                 break;
             }
         }
@@ -193,7 +193,7 @@ public:
     void Delete_all_node(Student_List *p)
     {
         char c1;
-        cout << "È·ÈÏÉ¾³ıÈ«²¿Êı¾İ£¿";
+        cout << "ç¡®è®¤åˆ é™¤å…¨éƒ¨æ•°æ®ï¼Ÿ";
         cin >> c1;
         while ((c1 == 'Y') || (c1 == 'y'))
         {
@@ -213,20 +213,20 @@ int main()
     Func Func;
     Func.List_Num = 0;
 
-    Student_List stu[SIZE]; //½¨Á¢stu¶ÔÏóÊı×é
+    Student_List stu[SIZE]; //å»ºç«‹stuå¯¹è±¡æ•°ç»„
     Student_List *p = stu;
 
     int menuNum1 = 0;
-    while (menuNum1 != 6) //¿Û¸öÁùÍË³ö
+    while (menuNum1 != 6) //æ‰£ä¸ªå…­é€€å‡º
     {
         cout << endl;
-        cout << "Ä¿Ç°ÓĞ" << Func.List_Num << "¸öÊı¾İ£¬ÊäÈëĞòºÅÒÔÑ¡Ôñ" << endl;
-        cout << "1. ÏÔÊ¾µ±Ç°Êı¾İ" << endl;
-        cout << "2. ´´½¨Ñ§ÉúÊı¾İ" << endl;
-        cout << "3. ĞŞ¸ÄÑ§ÉúÊı¾İ" << endl;
-        cout << "4. (Debug)´´½¨10¸öÑ§ÉúÊı¾İ" << endl;
-        cout << "5. Î´Íê³ÉµÄ" << endl;
-        cout << "6. ÍË³ö" << endl;
+        cout << "ç›®å‰æœ‰" << Func.List_Num << "ä¸ªæ•°æ®ï¼Œè¾“å…¥åºå·ä»¥é€‰æ‹©" << endl;
+        cout << "1. æ˜¾ç¤ºå½“å‰æ•°æ®" << endl;
+        cout << "2. åˆ›å»ºå­¦ç”Ÿæ•°æ®" << endl;
+        cout << "3. ä¿®æ”¹å­¦ç”Ÿæ•°æ®" << endl;
+        cout << "4. (Debug)åˆ›å»º10ä¸ªå­¦ç”Ÿæ•°æ®" << endl;
+        cout << "5. æœªå®Œæˆçš„" << endl;
+        cout << "6. é€€å‡º" << endl;
 
         cin >> menuNum1;
         switch (menuNum1)
@@ -241,7 +241,7 @@ int main()
         {
             if (Func.List_Num > SIZE)
             {
-                cout << "Êı¾İ¿âÒÑÂú£¬ÎŞ·¨´´½¨" << endl;
+                cout << "æ•°æ®åº“å·²æ»¡ï¼Œæ— æ³•åˆ›å»º" << endl;
                 break;
             }
             else
@@ -260,11 +260,11 @@ int main()
             if (Func.List_Num > 0)
             {
                 int Update_num = 0;
-                cout << "Ä¿Ç°ÓĞ" << Func.List_Num << "¸öÊı¾İ£¬ÇëÊäÈëĞèÒªĞŞ¸ÄµÄĞòºÅ£º";
+                cout << "ç›®å‰æœ‰" << Func.List_Num << "ä¸ªæ•°æ®ï¼Œè¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„åºå·ï¼š";
                 cin >> Update_num;
                 if ((Update_num < 0) || (Update_num > Func.List_Num))
                 {
-                    cout << "ÊäÈëµÄ²ÎÊıÓĞÎó£¬Çë¼ì²é" << endl;
+                    cout << "è¾“å…¥çš„å‚æ•°æœ‰è¯¯ï¼Œè¯·æ£€æŸ¥" << endl;
                 }
                 else
                 {
@@ -282,7 +282,7 @@ int main()
                 break;
             }
         }
-        case 4: //Debug ×Ô¶¯´´½¨10×éÊı¾İ
+        case 4: //Debug è‡ªåŠ¨åˆ›å»º10ç»„æ•°æ®
         {
             stu[0].All_Set(1, "AAA", "Class01", 78, 86, 80);
             stu[1].All_Set(2, "AAB", "Class01", 90, 61, 87);
@@ -295,7 +295,7 @@ int main()
             stu[8].All_Set(9, "AAI", "Class01", 90, 81, 84);
             stu[9].All_Set(10, "AAJ", "Class01", 76, 79, 81);
             Func.List_Num = 10;
-            cout << "Éú³ÉÁË10¸öÊı¾İ" << endl;
+            cout << "ç”Ÿæˆäº†10ä¸ªæ•°æ®" << endl;
         }
         default:
             break;
