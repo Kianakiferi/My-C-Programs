@@ -6,7 +6,12 @@ void Swap(int & x, int & y)
     y = tmp;
 }
 
-//
+//内联函数
+inline int Test1(int x)
+{
+    cout<<"Number is:<< x << endl;
+}
+//主函数中可Test1(a)
 
 -------------------------------------
 //函数模板
