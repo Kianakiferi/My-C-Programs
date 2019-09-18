@@ -5,6 +5,9 @@ void Swap(int & x, int & y)
     x = y;
     y = tmp;
 }
+
+//
+
 -------------------------------------
 //函数模板
 #include <iostream>
@@ -41,3 +44,5 @@ int main() {
     o.print("name", "Crystal");
     o.print("age", 18);
 }
+
+//
