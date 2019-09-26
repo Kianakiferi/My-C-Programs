@@ -13,6 +13,16 @@ inline int Test1(int x)
 }
 //主函数中可Test1(a)
 
+//获取当前时间
+void Set_now_time()
+    {
+        time_t rawtime;     //声明一个time_t（长整型）的变量
+        struct tm *plocal;      //声明一个tm结构的指针
+
+        time(&rawtime);     //time函数获取当前时间（秒，time_t类型）
+        plocal = localtime(&rawtime);   //localtime函数把它处理为常用格式（tm结构体）返回指针给plocal
+        Set_time(plocal->tm_hour, plocal->tm_min, plocal->tm_sec);
+    }
 -------------------------------------
 //函数模板
 #include <iostream>
