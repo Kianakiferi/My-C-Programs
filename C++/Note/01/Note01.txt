@@ -1,3 +1,29 @@
+//头文件存类 文件实现
+//文件1 (.h)
+#ifndef Test_h
+#define Test_h
+class Test
+{
+public:
+    void My_print();
+};
+#endif
+//文件2 (.cpp)
+#include <iostream>
+#include "Test_h.h"
+ void Test_h::Myprint()
+ {
+    cout<<"Hello World!"<<endl;
+ }
+
+//
+
+
+
+
+
+
+
 //引用函数
 void Swap(int & x, int & y)
 {
@@ -14,6 +40,7 @@ inline int Test1(int x)
 //主函数中可Test1(a)
 
 //获取当前时间
+#include <ctime>
 void Set_now_time()
     {
         time_t rawtime;     //声明一个time_t（长整型）的变量
