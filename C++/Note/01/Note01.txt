@@ -14,6 +14,7 @@ inline int Test1(int x)
 //主函数中可Test1(a)
 
 //获取当前时间
+#include <ctime>
 void Set_now_time()
     {
         time_t rawtime;     //声明一个time_t（长整型）的变量
