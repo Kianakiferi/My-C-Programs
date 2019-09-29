@@ -1,3 +1,9 @@
+//Copyright:FANS Corporation
+//Auther: Kiana~
+//Date: 09-28-2019 10:48AM
+//Description: 学生信息系统
+//Version: Alpha 0.000000000001
+
 #include <iomanip> //setfill功能
 #include <iostream>
 #include <string>
@@ -7,7 +13,7 @@ const int SIZE = 20;
 
 class Student
 {
-    static double sum_sum_max;
+    static double sum_sum_max;  //储存最大成绩和最大平均成绩
     static double sum_aver;
 
 public:
@@ -126,6 +132,7 @@ int main()
         {
             int Menunum2 = 0;
             int Menunum3 = 0;
+
             cout << "请输入要设置的数据: ";
             cin >> Menunum2;
             if (Menunum2 <= SIZE)
@@ -139,6 +146,7 @@ int main()
             cout << "3. 数学成绩" << endl;
             cout << "4. 英语成绩" << endl;
             cout << "5. 计算机成绩" << endl;
+
             cin >> Menunum3;
             switch (Menunum3)
             {
@@ -188,7 +196,7 @@ int main()
             }
             break;
         }
-        case 3:
+        case 3: //Debug自动生成20个数据
         {
             stu[0].Set_stu_inf(1, "ABC", 62, 57, 95);
             stu[1].Set_stu_inf(2, "AAA", 30, 30, 0);
@@ -217,6 +225,5 @@ int main()
             break;
         }
     }
-
     return 0;
 }
