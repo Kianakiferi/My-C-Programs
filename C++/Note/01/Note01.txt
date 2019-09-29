@@ -1,3 +1,29 @@
+//头文件存类 文件实现
+//文件1 (.h)
+#ifndef Test_h
+#define Test_h
+class Test
+{
+public:
+    void My_print();
+};
+#endif
+//文件2 (.cpp)
+#include <iostream>
+#include "Test_h.h"
+ void Test_h::Myprint()
+ {
+    cout<<"Hello World!"<<endl;
+ }
+
+//
+
+
+
+
+
+
+
 //引用函数
 void Swap(int & x, int & y)
 {
