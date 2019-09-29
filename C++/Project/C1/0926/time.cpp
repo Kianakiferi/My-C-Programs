@@ -105,7 +105,7 @@ int main()
         case 2:
         {
             int Menunum2 = 0;
-            cout << "请选择要设置数据: ";
+            cout << "请选择要设置的数据: ";
             cin >> Menunum2;
             p1 = phead;
             for (int i = 0; i < Menunum2; i++)
