@@ -16,13 +16,12 @@ public:
     cout<<"Hello World!"<<endl;
  }
 
-//
+//thisz指针指同名参数
 
-
-
-
-
-
+int test(int i)
+{
+    this-> i = i;
+}
 
 //引用函数
 void Swap(int & x, int & y)
