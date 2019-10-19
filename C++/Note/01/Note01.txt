@@ -25,7 +25,7 @@ int test(int i)
 
 //Datetime
 
-
+//一个类中，只能有一个缺省构造函数。
 
 
 
