@@ -27,7 +27,10 @@ int test(int i)
 
 //一个类中，只能有一个缺省构造函数。
 
-
+//随机数函数
+#include <ctime>
+srand((unsigned)time(NULL));
+int i = rand() % 100; //产生0 - RANGE的随机数
 
 //引用函数
 void Swap(int & x, int & y)
