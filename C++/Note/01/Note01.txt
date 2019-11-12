@@ -81,6 +81,27 @@ public:
 //static 成员，有全局对象的作用，但又不破坏封装。
 
 //-------------------------------------
+//C++的split函数
+#include <sstream>
+#include <string>
+
+template <typename out>
+void split(const string &s, char delim, out result)
+{
+    istringstream iss(s);
+    string item;
+    while (getline(iss, item, delim))
+    {
+        *result++ = item;
+    }
+}
+main里：
+string str1,str2; //str2用来存分过的一个词
+stringstream ss(str1);
+ss >> str2
+str2就是分的第一个词,自写循环
+
+//-------------------------------------
 //随机数函数
 #include <ctime>
 srand((unsigned)time(NULL));
