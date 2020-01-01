@@ -1,3 +1,59 @@
+//-------------------------------------
+//this指针指同名参数
+
+int test(int i)
+{
+    this-> i = i;
+}
+
+//-------------------------------------
+//Datetime
+
+//-------------------------------------
+//一个类中，只能有一个缺省构造函数。
+
+//-------------------------------------
+//异常处理
+
+//不要抛出指针（抛数组 == 抛数组首元素的指针）
+//析构函数不要抛出异常
+
+//-------------------------------------
+//可以使用类型别名来简化类
+class People
+{ 
+public: 
+     typedef std::string phonenum; //电话号码类型
+ 
+     phonenum phone_Pub; //公开号码
+private:      
+     phonenum phone_Priv;//私人号码
+}; 
+ 
+//-------------------------------------
+//友元的例子
+class Husband
+{
+public:
+     friend class Wife;
+private:
+     double money; //钱是老公私有的，别人不能动，但老婆除外
+};
+ 
+class Wife
+{
+public:
+     void Consume(Husband& h)
+     {
+          h.money -= 1000; //老婆可以花老公的钱
+     }
+};
+
+Husband h;
+Wife w;
+w.Consume(h); //money - 1000
+
+//-------------------------------------
 //头文件存类 文件实现
 //文件1 (.h)
 #ifndef Test_h
@@ -15,15 +71,43 @@ public:
  {
     cout<<"Hello World!"<<endl;
  }
-
-//
-
-
-
+ 
+//-------------------------------------
+//尽可能使用const，能节省很多开销，无论是在传值，全局变量，void函数里
 
 
 
+//-------------------------------------
+//static 成员，有全局对象的作用，但又不破坏封装。
 
+//-------------------------------------
+//C++的split函数
+#include <sstream>
+#include <string>
+
+template <typename out>
+void split(const string &s, char delim, out result)
+{
+    istringstream iss(s);
+    string item;
+    while (getline(iss, item, delim))
+    {
+        *result++ = item;
+    }
+}
+main里：
+string str1,str2; //str2用来存分过的一个词
+stringstream ss(str1);
+ss >> str2
+str2就是分的第一个词,自写循环
+
+//-------------------------------------
+//随机数函数
+#include <ctime>
+srand((unsigned)time(NULL));
+int i = rand() % 100; //产生0 - RANGE的随机数
+
+//-------------------------------------
 //引用函数
 void Swap(int & x, int & y)
 {
@@ -32,6 +116,7 @@ void Swap(int & x, int & y)
     y = tmp;
 }
 
+//-------------------------------------
 //内联函数
 inline int Test1(int x)
 {
@@ -39,6 +124,7 @@ inline int Test1(int x)
 }
 //主函数中可Test1(a)
 
+//-------------------------------------
 //获取当前时间
 #include <ctime>
 void Set_now_time()
@@ -50,7 +136,8 @@ void Set_now_time()
         plocal = localtime(&rawtime);   //localtime函数把它处理为常用格式（tm结构体）返回指针给plocal
         Set_time(plocal->tm_hour, plocal->tm_min, plocal->tm_sec);
     }
--------------------------------------
+    
+//-------------------------------------
 //函数模板
 #include <iostream>
 using namespace std;
@@ -70,6 +157,7 @@ int main()
     return 0;
 }
 
+//-------------------------------------
 //类成员函数模板
 #include <iostream>
 
@@ -87,4 +175,4 @@ int main() {
     o.print("age", 18);
 }
 
-//
+//-------------------------------------
