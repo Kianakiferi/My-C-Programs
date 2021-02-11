@@ -5,5 +5,6 @@ I learning C for 4 months, Here's some codes. They're not very well I know, and 
 
 Now, I'm learning C++ :)
 
-Take it My Friends~ 
-MIT License?
+Take It My Friends~ 
+
+Is That MIT License?
